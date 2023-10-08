@@ -12,5 +12,19 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(tutorial => {
+    // Split the string into words
+    const words = tutorial.split(' ');
+
+    // Capitalize the first letter of each word and join them back together
+    const titleCaseWords = words.map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+
+    // Join the title-cased words to form the title-cased string
+    return titleCaseWords.join(' ');
+  });
+};
+
+const titleCasedTutorials = titleCased();
+console.log(titleCasedTutorials);
